@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
@@ -8,10 +9,10 @@ function Header() {
                 Zomato
             </div>
             <ul className='flex space-x-6'>
-                <li className='hover:text-gray-300'>Home</li>
-                <li className='hover:text-gray-300'>Contact</li>
-                <li className='hover:text-gray-300'>About</li>
-                <li className='hover:text-gray-300'>Cart</li>
+                <Link to='/' className='hover:text-gray-300'>Home</Link>
+                <Link to='/contact' className='hover:text-gray-300'>Contact</Link>
+                <Link to='/about' className='hover:text-gray-300'>About</Link>
+                <Link to='/cart' className='hover:text-gray-300'>Cart</Link>
 
             </ul>
 
