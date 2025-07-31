@@ -6,7 +6,7 @@ function Header() {
     <nav className='bg-red-600 text-white px-6 py-4 shadow-md'>
         <div className='flex justify-between items-center'>
             <div className='text-2xl font-bold'>
-                Zomato
+            <Link to='/' className='hover:text-gray-300'>Zomato</Link>
             </div>
             <ul className='flex space-x-6'>
                 <Link to='/' className='hover:text-gray-300'>Home</Link>

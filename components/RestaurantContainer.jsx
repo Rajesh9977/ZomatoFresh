@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import RestaurantCard from './RestaurantCard';
 
 const ShimmerCard = () => {
@@ -68,6 +69,7 @@ const RestaurantContainer = () => {
 
   return (
     <div className="p-4">
+      {/* 🔍 Search and Filter */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
         <input
           type="text"
@@ -85,14 +87,17 @@ const RestaurantContainer = () => {
         </button>
       </div>
 
+      {/* 🍽️ Restaurant List */}
       <div className="flex flex-wrap gap-4 justify-center">
         {loading ? (
           <ShimmerCard />
         ) : filteredRestaurants.length === 0 ? (
           <p className="text-red-500 text-lg">No restaurants found.</p>
         ) : (
-          filteredRestaurants.map((res, idx) => (
-            <RestaurantCard key={idx} {...res.info} />
+          filteredRestaurants.map((res) => (
+            <Link to={`/restaurant/${res.info.id}`} key={res.info.id}>
+              <RestaurantCard {...res.info} />
+            </Link>
           ))
         )}
       </div>
