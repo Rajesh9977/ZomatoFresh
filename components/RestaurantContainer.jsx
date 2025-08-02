@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import RestaurantCard from './RestaurantCard';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 const ShimmerCard = () => {
   return (
@@ -65,6 +66,12 @@ const RestaurantContainer = () => {
     )
     .filter((r) =>
       showTopRated ? parseFloat(r.info.avgRating) >= 4.5 : true
+    );
+
+    const onlineStatus = useOnlineStatus();
+    if(onlineStatus === false)
+      return(
+    <h1>You are offline</h1>
     );
 
   return (
