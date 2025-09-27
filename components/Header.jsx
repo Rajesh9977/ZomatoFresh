@@ -14,7 +14,7 @@ function Header() {
                 <li>Online Status: {onlineStatus ? "Yes": "No"}</li>
                 <Link to='/' className='hover:text-gray-300'>Home</Link>
                 <Link to='/contact' className='hover:text-gray-300'>Contact</Link>
-                <Link to='/about' className='hover:text-gray-300'>About</Link>
+                <Link to='/about' className='hover:text-gray-300'>PavanVaishu💕</Link>
                 <Link to='/cart' className='hover:text-gray-300'>Cart</Link>
 
             </ul>
